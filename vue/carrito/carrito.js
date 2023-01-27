@@ -5,12 +5,14 @@ Vue.createApp({
               
             ],
             producto:"" */
+            colortable:"danger",
             nombre:"",
             precio:"",
             cantidad:"",
             color:"",
             caracteristicas:"",
             pasillo:"",
+            url:"",
             productos:[]
         }
     },
@@ -27,6 +29,7 @@ Vue.createApp({
                 color:this.color,
                 caracteristicas:this.caracteristicas,
                 pasillo:this.pasillo,
+                url:this.url
 
             }
             this.productos.push(producto);

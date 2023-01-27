@@ -40,13 +40,25 @@
                 <label class="form-label">Pasillo</label>
                 <input v-model="pasillo" type="number" class="form-control">
             </div>
+            <div class="mb-3">
+                <label class="form-label">Foto</label>
+                <input v-model="url" type="text" class="form-control">
+            </div>
 
                 <button @click="agregar()" type="submit" class="btn btn-primary">Agregar</button>
 
         </form>
 
-        <div class="table mt-5">
-        <table class="table">
+    <div :class="'table mt-5 table-'+colortable">
+        <select v-model="colortable">
+            <option value="dark"> Color Negro</option>
+            <option value="danger"> Rojo</option>
+            <option value="success">Verde</option>
+            <option value="warning">Amarillo</option>
+            
+            </select>
+            {{colortable}}
+        <table :class="'table mt-5 table-'+colortable">
             <thead>
                 <tr>
                     <th scope="col">Nombre</th>
@@ -55,6 +67,7 @@
                     <th scope="col">Color</th>
                     <th scope="col">Caracteristicas</th>
                     <th scope="col">Pasillo</th>
+                    <th scope="col">url</th>
                 </tr>
             </thead>
             <tbody>
@@ -82,6 +95,7 @@
                     <td>{{producto.color}}</td>
                     <td>{{producto.caracteristicas}}</td>
                     <td>{{producto.pasillo}}</td>
+                    <td><img :src="producto.url" alt="" style="width: 100px;"></td>
                 
                 </tr>
             </tbody>
